@@ -24,7 +24,7 @@ public class Producer {
 
         for (int i = 0; i < 10; i++) {
             Message msg = session.createTextMessage("Message_" + i);
-            producer.send(msg);//, msg, DeliveryMode.PERSISTENT, i, 100000);
+            producer.send(destination, msg, DeliveryMode.PERSISTENT, i, 100000);
             Thread.sleep(1000);
         }
 
